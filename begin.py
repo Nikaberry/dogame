@@ -1,3 +1,5 @@
+# Файл: begin.py
+
 import pygame
 import sys
 
@@ -38,7 +40,7 @@ def start_screen():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 end()
-            elif event.key == pygame.K_SPACE:
-                return
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+                return True
         pygame.display.flip()
         clock.tick(50)
